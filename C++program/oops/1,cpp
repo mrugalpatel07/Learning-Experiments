@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+class student
+{
+public :
+int a=10,b=20,c=30;
+string s="demo";    
+};
+int main()
+{
+    int a,b,c;
+    student s1,s2,s3;
+    cout<<"value of a="<<s1.a<<endl;
+    cout<<"value of a="<<s1.b<<endl;
+    cout<<"value of a="<<s2.a<<endl;
+    cout<<"value of a="<<s3.c;
+    return 0;
+
+
+
+}
