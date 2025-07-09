@@ -1,0 +1,121 @@
+/* Basic Reset – Removes browser default spacing and uses nice font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Page Background – Dark gradient with padding and white text */
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 30px 20px;
+  min-height: 100vh;  /* Makes sure page covers full height */
+}
+
+/* Page Heading – Centered, big size, glowing effect */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #00ffff;  /* Light blue color */
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 8px rgba(0, 255, 255, 0.3);  /* Soft shadow glow */
+  animation: slideDown 1s ease-out;  /* Header slides in on page load */
+}
+
+/* Product Grid – Shows 3 items per row with gap */
+#main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 10px;
+}
+
+/* Each product box – rounded border, soft glow, zoom on hover */
+#main div {
+  background: rgba(255, 255, 255, 0.08);  /* Slight transparent white */
+  border: 2px solid #00ffff80;  /* Light blue border */
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);  /* Soft outer shadow */
+  backdrop-filter: blur(10px);  /* Blurred background inside card */
+  transition: 0.4s ease;  /* Smooth animation */
+}
+
+/* When mouse is over a product box */
+#main div:hover {
+  transform: scale(1.05);  /* Slight zoom */
+  border-color: #00ffff;   /* Brighter border */
+  box-shadow: 0 0 25px #00ffffaa;  /* Glow effect */
+}
+
+/* Product Image – Fixed size and zooms a little on hover */
+img {
+  width: 180px;
+  object-fit: cover;  /* Keeps image neat and cropped */
+  border-radius: 15px;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom image a bit when hovering over the box */
+#main div:hover img {
+  transform: scale(1.08);
+}
+
+/* Product name text below image */
+p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Buy Now button – color, shape, and hover effect */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(135deg, #00ffff, #00cccc);  /* Gradient */
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+a:hover {
+  background: #00cccc;
+  color: white;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* Responsive Design – Adjust grid for small screens */
+@media screen and (max-width: 1000px) {
+  #main {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns on tablets */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #main {
+    grid-template-columns: 1fr;  /* 1 column on phones */
+  }
+}
+
+/* Slide-down animation for heading */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
